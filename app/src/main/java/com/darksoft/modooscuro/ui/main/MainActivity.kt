@@ -3,6 +3,9 @@ package com.darksoft.modooscuro.ui.main
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO
+import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_YES
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.booleanPreferencesKey
@@ -68,6 +71,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.switchModeDark.setOnCheckedChangeListener { _, isChecked ->
+
+            if (isChecked) enableDarkMode() else disableDarkMode()
+
             // Guardar valor en DataStore
             CoroutineScope(Dispatchers.IO).launch {
                 saveOptions(MODE_DARK, isChecked)
@@ -112,4 +118,15 @@ class MainActivity : AppCompatActivity() {
             volumeLevel = preferences[intPreferencesKey(VOLUME_LEVEL)] ?: 0
         ) }
 
+    // Enable dark mode
+    private fun enableDarkMode(){
+        AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_YES)
+        delegate.applyDayNight()
+    }
+
+    // Disable dark mode
+    private fun disableDarkMode(){
+        AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_NO)
+        delegate.applyDayNight()
+    }
 }
