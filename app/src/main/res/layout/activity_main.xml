@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="8dp"
+    android:background="@color/background"
     android:orientation="vertical"
-    tools:context=".ui.MainActivity">
+    tools:context=".ui.main.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -33,7 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=".Modo Oscuro"
-                android:textColor="@color/black"
+                android:textColor="@color/text_title"
                 android:textSize="18sp" />
 
             <TextView
@@ -78,7 +78,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=".Activar bluetooth"
-                android:textColor="@color/black"
+                android:textColor="@color/text_title"
                 android:textSize="18sp" />
 
             <TextView
@@ -128,7 +128,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=".Aumentar sonido"
-                android:textColor="@color/black"
+                android:textColor="@color/text_title"
                 android:textSize="18sp" />
 
             <com.google.android.material.slider.RangeSlider
@@ -177,7 +177,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=".Habilita las vibraciones"
-                android:textColor="@color/black"
+                android:textColor="@color/text_title"
                 android:textSize="12sp" />
         </LinearLayout>
 
